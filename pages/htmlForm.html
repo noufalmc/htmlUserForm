@@ -1,0 +1,79 @@
+<html>
+    <head>
+        <title>RegForm</title>
+        <link rel="stylesheet" href="../css/style.css" type="text/css">
+    </head>
+    <body>
+        <form>
+        <header class="hederContent">
+            <h1>HTML5 Input Fields</h1>
+        </header>
+        <div>
+            <label for="text">Text Input For Name</label>
+            <input type="text" id="name" name="text">
+            <error-output class="error">Invalid Name</error-output>
+        </div>
+
+        <div>
+            <label for="text">Password Input Type</label>
+            <input type="password" id="password" name="password">
+        </div>
+        <div>
+            <label for="email">Email Input Type</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="url">url Input Type</label>
+            <input type="url" id="url" name="url">
+        </div>
+        <div>
+            <label for="number">Number Input Type</label>
+            <input type="number" id="number" name="number">
+        </div>
+        <div>
+            <label for="tel">Tel Input Type</label>
+            <input type="email" id="tel" name="tel">
+        </div>
+        <div>
+            <label for="search">search Input Type</label>
+            <input type="search" id="search" name="search">
+        </div>
+        <div>
+            <label for="text">Email Input Type</label>
+            <input type="email" id="email" name="email">
+        </div>
+        <div>
+            <label for="party">Choose Date and Time</label>
+            <input type="datetime-local" id="party" name="bdy">
+        </div>
+        <div>
+            <label for="salary">salary</label>
+                <input type="range" name="salary" id="salary" min="300000" max="500000" value="400000" step="100">
+                <output class="salary">400000</output>
+        </div>
+        <div>
+            <button>Save</button>
+        </div>
+        </form>
+        <script>
+            const input=document.querySelector("#name");
+            const textError=document.querySelector(".error");
+            input.addEventListener('input',function(){
+                let regExp=RegExp("^[A-Z]{1}[a-zA-Z]{2,}$");
+                if(regExp.test(input.value))
+                {
+                    textError.innerText='';
+                }
+                else
+                {
+                    textError.innerText='Please Enter Valid Name';
+                }
+            })
+            const salary=document.querySelector("#salary");
+            const output=document.querySelector(".salary");
+            salary.addEventListener('input',function(){
+                output.innerText=salary.value;
+            })
+        </script>
+    </body>
+</html>
