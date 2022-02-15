@@ -18,10 +18,7 @@
             <label for="text">Password Input Type</label>
             <input type="password" id="password" name="password">
         </div>
-        <div>
-            <label for="email">Email Input Type</label>
-            <input type="email" id="email" name="email">
-        </div>
+       
         <div>
             <label for="url">url Input Type</label>
             <input type="url" id="url" name="url">
@@ -41,6 +38,7 @@
         <div>
             <label for="text">Email Input Type</label>
             <input type="email" id="email" name="email">
+            <errorEmail style="color:red;" class="emailError"></errorEmail>
         </div>
         <div>
             <label for="party">Choose Date and Time</label>
@@ -73,6 +71,20 @@
             const output=document.querySelector(".salary");
             salary.addEventListener('input',function(){
                 output.innerText=salary.value;
+            })
+            const email=document.querySelector("#email");
+            const validation=document.querySelector(".emailError");
+            validation.innerText="Invalid Email";
+            email.addEventListener('input',function(){
+                    let regex=RegExp('^[A-Za-z0-9]+([.][a-zA-z0-9]+)*([@][a-zA-Z0-9]+)+([.][a-zA-Z]+)*$');
+                    if(regex.test(email.value))
+                    {
+                        validation.innerText='';
+                    }
+                    else
+                    {
+                        validation.innerText="Invalid Email";
+                    }
             })
         </script>
     </body>
