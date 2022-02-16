@@ -17,6 +17,7 @@
         <div>
             <label for="text">Password Input Type</label>
             <input type="password" id="password" name="password">
+            <errorPassword style="color: red;" class="errorPassword"></errorPassword>
         </div>
        
         <div>
@@ -91,7 +92,7 @@
             const invalidMobile=document.querySelector("#invalidMobile");
             
             mobileNumber.addEventListener('input',function(){
-                let regex=RegExp("^[1-9]{1}[0-9]{9}$");
+                let regex=RegExp("^ [1-9]{1}[0-9]{9}$");
                 if(regex.test(mobileNumber.value))
                 {
                     invalidMobile.innerText='';
@@ -101,6 +102,11 @@
                     
                     invalidMobile.innerText="Invalid Mobile";
                 }
+            })
+            const password=document.querySelector("#password");
+            const error=document.querySelector(".errorPassword");
+            password.addEventListener('input',function(){
+                let regex=RegExp('(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])[0-9a-zA-Z]*[@#$%_!^&*]?[0-9a-zA-Z]*$')
             })
         </script>
     </body>

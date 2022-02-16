@@ -1,0 +1,42 @@
+html
+{
+
+}
+body
+{
+    background-color:blanchedalmond;
+    font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+}
+.header
+{
+    width:100%;
+    background-color:white;
+    padding: 15px 0px;
+    
+    
+}
+.heade-content
+{
+    display: flex;
+    justify-content: center;
+}
+.logo-content
+{
+    display:flex;
+    flex-direction:row;
+    align-items:center;
+    width:50%;
+    border: 1px solid green;
+}
+.header img
+{
+    height:30px;
+    display: flex;
+    border-radius:120px;
+    margin:10px;
+    
+}
+.header-text
+{
+    color: chartreuse;
+}
